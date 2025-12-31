@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f5;
+  padding: 0;
+  min-height: 100vh;
+}
+.container {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 3rem;
+}
+.input-section {
+  background: #fff;
+  padding: 3rem;
+  /* border-radius: 15px; */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  top: 20px;
+}
+
+.input-section h2 {
+  color: #6b8e4e;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.letterhead-upload {
+  background: #e8f5e9;
+  border: 2px dashed #6b8e4e;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.letterhead-upload label {
+  display: block;
+  cursor: pointer;
+  color: #6b8e4e;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.letterhead-upload input[type="file"] {
+  display: none;
+}
+
+.upload-button {
+  background: #6b8e4e;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s;
+  font-size: 13px;
+}
+
+.upload-button:hover {
+  background: #5a7740;
+}
+
+.letterhead-status {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+.letter-type-selector {
+  background: #fff3e0;
+  border: 2px solid #ff9800;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.letter-type-selector label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.letter-type-selector select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  background: white;
+}
+#preview {
+  width: 300px;
+  height: 200px;
+  border: 2px dashed #ccc;
+  background-size: cover;
+  background-position: center;
+}
+.letter-type-selector select:focus {
+  outline: none;
+  border-color: #ff9800;
+}
+
+.template-info {
+  margin-top: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #666;
+  display: none;
+}
+
+.template-info.active {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #6b8e4e;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-evenly;
+  /* padding: 0 10rem; */
+  gap: 3rem;
+  margin-top: 25px;
+}
+
+button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.clear-btn {
+  background: #f44336;
+  color: white;
+}
+
+.clear-btn:hover {
+  background: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+}
+/* 
+.browse-btn {
+  background: #2196f3;
+  color: white;
+  width: 100%;
+  margin-top: 15px;
+  display: none;
+}
+
+.browse-btn:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+} */
+
+.preview-btn {
+  background: #ff9800;
+  color: white;
+}
+
+.preview-btn:hover {
+  background: #f57c00;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+}
+.preview-section {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.preview-section.active {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.preview-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  margin: 20px auto;
+  max-width: 900px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.preview-top {
+  background: #6b8e4e;
+  padding: 1.2rem 2.4rem;
+  display: flex;
+  gap: 400px;
+  align-items: center;
+  /* flex: 0; */
+}
+
+.preview-controls {
+  padding: 0 2rem;
+  /* width: 60%; */
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.preview-top h3 {
+  color: white;
+  margin: 0;
+  font-size: 20px;
+}
+
+.print-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.print-btn:hover {
+  transform: scale(1.05);
+
+  /* transform: translateY(-2px); */
+}
+
+.close-preview {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.close-preview:hover {
+  transform: scale(1.05);
+}
+
+.preview-header {
+  display: none;
+}
+
+.letter-page {
+  width: 21cm;
+  min-height: 29.7cm;
+  background: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.letter-content {
+  padding: 250px 60px 140px 60px;
+  min-height: 650px;
+}
+
+.date-line {
+  text-align: right;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #333;
+}
+
+.recipient-address {
+  margin-bottom: 30px;
+  white-space: pre-line;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.letter-heading {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 16px;
+  text-decoration: underline;
+  color: #333;
+}
+
+.letter-body {
+  white-space: pre-line;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  text-align: justify;
+  font-size: 14px;
+  color: #333;
+}
+
+.signature-section {
+  margin-top: 50px;
+}
+
+.signature-line {
+  margin-top: 60px;
+  font-size: 14px;
+}
+
+.signatory-name {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
