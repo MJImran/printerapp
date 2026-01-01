@@ -394,7 +394,7 @@ button {
     /* background-color: blue; */
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 4rem;
     /* justify-content: space-around; */
   }
 
