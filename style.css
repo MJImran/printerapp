@@ -22,13 +22,13 @@ body {
   padding: 3rem;
   /* border-radius: 15px; */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  top: 20px;
+  top: 2rem;
 }
 
 .input-section h2 {
   color: #6b8e4e;
-  margin-bottom: 25px;
-  font-size: 24px;
+  margin-bottom: 2.5rem;
+  font-size: 2.4rem;
 }
 
 .letterhead-upload {
@@ -224,7 +224,8 @@ button {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  overflow-y: auto;
+  /* overflow-y: auto; */
+  overflow-x: scroll;
   padding: 20px;
 }
 
@@ -238,7 +239,7 @@ button {
   background: white;
   border-radius: 15px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  overflow: scroll;
   margin: 20px auto;
   max-width: 900px;
   animation: slideIn 0.3s ease-out;
@@ -300,10 +301,6 @@ button {
 
 .close-preview:hover {
   transform: scale(1.05);
-}
-
-.preview-header {
-  display: none;
 }
 
 .letter-page {
@@ -368,4 +365,51 @@ button {
 .signatory-name {
   font-weight: bold;
   margin-bottom: 3px;
+}
+
+@media (max-width: 27.5em) {
+  .preview-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    /* overflow: scroll; */
+    margin: 20px auto;
+    width: 100vw;
+    /* height: ; */
+    animation: slideIn 0.3s ease-out;
+  }
+  .preview-top {
+    /* background: #6b8e4e; */
+    padding: 0.6rem 1.2rem;
+    display: flex;
+    /* gap: 10rem; */
+    justify-content: space-between;
+    align-items: center;
+    /* flex: 0; */
+  }
+
+  .preview-controls {
+    padding: 0 2rem;
+    /* width: 60%; */
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    /* justify-content: space-around; */
+  }
+
+  .preview-top h3 {
+    color: white;
+    margin: 0;
+    display: none;
+    /* font-size: 1.2rem; */
+  }
+
+  .print-btn,
+  .close-preview {
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
 }
