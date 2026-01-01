@@ -412,4 +412,7 @@ button {
     /* font-size: 0.8rem; */
     font-weight: 600;
   }
+  button {
+    padding: 0.7rem 1.4rem;
+  }
 }
