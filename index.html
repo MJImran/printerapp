@@ -11,7 +11,7 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
-    <script src="./script.js" defer></script>
+    <script src="./script.js" type="module" defer></script>
   </head>
   <body>
     <div class="container">
@@ -35,7 +35,7 @@
 
         <div class="letter-type-selector">
           <label for="letterType"> Letter Type</label>
-          <select id="letterType" onchange="handleLetterTypeChange()">
+          <select id="letterType">
             <option value="manual">Manual Composition</option>
             <option value="eoi">Expression of Interest</option>
             <option value="quotation">Request for Quotation</option>
@@ -102,9 +102,7 @@
           <div class="preview-top">
             <h3>Letter Preview</h3>
             <div class="preview-controls">
-              <button class="close-preview" onclick="togglePreview()">
-                Close
-              </button>
+              <button class="close-preview">Close</button>
               <button class="print-btn" id="print-btn">Print</button>
             </div>
           </div>
