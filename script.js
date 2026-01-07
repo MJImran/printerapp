@@ -1,36 +1,41 @@
 import letterTemplates from "./letterdata.js";
 
 const input = document.getElementById("letterhead");
+const inputLabel = document.querySelector(`label[for='${input.id}']`);
 const preview = document.getElementById("preview");
 const download = document.getElementById("print-btn");
-const page = document.getElementById("letterContent");
+const previewPage = document.getElementById("previewContent");
+const printPage = document.getElementById("printContent");
 const letterhead = document.getElementById("letterhead");
 const letterType = document.getElementById("letterType");
 const previewBtn = document.querySelector(".preview-btn");
 const closePreviewBtn = document.querySelector(".close-preview");
 
-input.addEventListener("change", handleLetterheadUpload);
+input.addEventListener("change", letterheadUpload);
 
-letterhead.addEventListener("change", handleLetterheadUpload);
+letterhead.addEventListener("change", letterheadUpload);
 
 download.addEventListener("click", printPDF);
 
-letterType.addEventListener("change", handleLetterTypeChange);
+letterType.addEventListener("change", letterTypeChange);
 
 previewBtn.addEventListener("click", togglePreview);
 
 closePreviewBtn.addEventListener("click", togglePreview);
 
 //
-function handleLetterheadUpload() {
+function letterheadUpload() {
   const file = this.files[0];
+  // console.log(file.name, inputLabel.textContent);
   if (file) {
+    const title = file.name;
+    inputLabel.textContent = title;
     const imageUrl = URL.createObjectURL(file);
-    page.style.backgroundImage = `url(${imageUrl})`;
+    previewPage.style.backgroundImage = `url(${imageUrl})`;
   }
 }
 
-function handleLetterTypeChange() {
+function letterTypeChange() {
   const letterType = document.getElementById("letterType").value;
   const templateInfo = document.getElementById("templateInfo");
 
@@ -55,19 +60,21 @@ function printPDF() {
   window.jsPDF = window.jspdf.jsPDF;
   console.log("downloading pdf");
   let pdf = new jsPDF("p", "px", "a4");
-  html2canvas(page).then((canvas) => {
+  html2canvas(printPage).then((canvas) => {
     let base64image = canvas.toDataURL("image/png");
     console.log(base64image);
 
     pdf.addImage(base64image, "PNG", 0, 0, 445, 620);
     console.log("about to save");
     pdf.save(`${heading + new Date()}`);
+    window.location.reload();
   });
 }
 
 function updatePreview() {
   const date = document.getElementById("date").value;
   const recipient = document.getElementById("recipient").value;
+  const greeting = document.getElementById("greeting").value;
   const heading = document.getElementById("heading").value;
   const body = document.getElementById("body").value;
   const signatory = document.getElementById("signatory").value;
@@ -86,6 +93,7 @@ function updatePreview() {
   }
 
   document.getElementById("preview-recipient").textContent = recipient;
+  document.getElementById("preview-greeting").textContent = greeting;
   document.getElementById("preview-heading").textContent = heading;
   document.getElementById("preview-body").textContent = body;
   document.getElementById("preview-signatory").textContent = signatory;

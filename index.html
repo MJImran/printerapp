@@ -31,7 +31,12 @@
             style="display: none"
           /> 
         </div> -->
-        <input type="file" id="letterhead" accept="image/*" />
+        <div class="img-upload">
+          <label for="letterhead">
+            Upload letter head
+            <input type="file" id="letterhead" accept="image/*" />
+          </label>
+        </div>
 
         <div class="letter-type-selector">
           <label for="letterType"> Letter Type</label>
@@ -61,6 +66,15 @@
             id="recipient"
             placeholder="Enter recipient name and address&#10;Line by line"
           ></textarea>
+        </div>
+
+        <div class="pleasantries">
+          <label for="greeting">Pleasantry</label>
+          <select id="greeting">
+            <option>Dear Sir</option>
+            <option>Dear Sir/Ma</option>
+            <option>Dear Ma</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -106,10 +120,11 @@
               <button class="print-btn" id="print-btn">Print</button>
             </div>
           </div>
-          <div class="letter-page" id="letterContent">
+          <div class="letter-preview" id="previewContent">
             <div class="letter-content">
               <div class="date-line" id="preview-date"></div>
               <div class="recipient-address" id="preview-recipient"></div>
+              <div class="greeting" id="preview-greeting"></div>
               <div class="letter-heading" id="preview-heading"></div>
               <div class="letter-body" id="preview-body"></div>
               <div class="signature-section">
@@ -118,6 +133,21 @@
                   <div id="preview-title"></div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="letter-page-print" id="printContent">
+        <div class="letter-content">
+          <div class="date-line" id="print-date"></div>
+          <div class="recipient-address" id="print-recipient"></div>
+          <div class="greeting" id="print-greeting"></div>
+          <div class="letter-heading" id="print-heading"></div>
+          <div class="letter-body" id="print-body"></div>
+          <div class="signature-section">
+            <div class="signature-line">
+              <div class="signatory-name" id="print-signatory"></div>
+              <div id="print-title"></div>
             </div>
           </div>
         </div>
