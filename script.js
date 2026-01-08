@@ -4,8 +4,7 @@ const input = document.getElementById("letterhead");
 const inputLabel = document.querySelector(`label[for='${input.id}']`);
 const preview = document.getElementById("preview");
 const download = document.getElementById("print-btn");
-const previewPage = document.getElementById("previewContent");
-const printPage = document.getElementById("printContent");
+const page = document.getElementById("letterContent");
 const letterhead = document.getElementById("letterhead");
 const letterType = document.getElementById("letterType");
 const previewBtn = document.querySelector(".preview-btn");
@@ -31,7 +30,7 @@ function letterheadUpload() {
     const title = file.name;
     inputLabel.textContent = title;
     const imageUrl = URL.createObjectURL(file);
-    previewPage.style.backgroundImage = `url(${imageUrl})`;
+    page.style.backgroundImage = `url(${imageUrl})`;
   }
 }
 
@@ -60,7 +59,7 @@ function printPDF() {
   window.jsPDF = window.jspdf.jsPDF;
   console.log("downloading pdf");
   let pdf = new jsPDF("p", "px", "a4");
-  html2canvas(printPage).then((canvas) => {
+  html2canvas(page).then((canvas) => {
     let base64image = canvas.toDataURL("image/png");
     console.log(base64image);
 

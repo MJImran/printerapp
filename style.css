@@ -254,9 +254,10 @@ button {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   /* overflow-y: auto; */
-  /* overflow-x: scroll; */
+  overflow-x: scroll;
   padding: 20px;
 }
+
 .preview-container::-webkit-scrollbar {
   display: none;
 }
@@ -333,14 +334,6 @@ button {
 
 .close-preview:hover {
   transform: scale(1.05);
-}
-
-.letter-preview {
-  width: 100%;
-  background: white;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .letter-page {
