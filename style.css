@@ -30,26 +30,28 @@ body {
   margin-bottom: 2.5rem;
   font-size: 2.4rem;
 }
-
-.letterhead-upload {
+.img-upload {
   background: #e8f5e9;
   border: 2px dashed #6b8e4e;
   border-radius: 10px;
-  padding: 15px;
+  /* padding: 5px; */
   margin-bottom: 25px;
   text-align: center;
 }
 
-.letterhead-upload label {
+.img-upload label {
+  height: 100%;
   display: block;
+  padding: 10px;
   cursor: pointer;
   color: #6b8e4e;
   font-weight: 600;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
   font-size: 13px;
+  /* background-color: #000; */
 }
 
-.letterhead-upload input[type="file"] {
+.img-upload input[type="file"] {
   display: none;
 }
 
@@ -68,11 +70,11 @@ body {
   background: #5a7740;
 }
 
-.letterhead-status {
+/* .letterhead-status {
   margin-top: 8px;
   font-size: 12px;
   color: #666;
-}
+} */
 .letter-type-selector {
   background: #fff3e0;
   border: 2px solid #ff9800;
@@ -127,6 +129,33 @@ body {
 
 .form-group {
   margin-bottom: 20px;
+}
+
+.pleasantries {
+  background: #fff3e0;
+  border: 2px solid #ff9800;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.pleasantries label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.pleasantries select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  background: white;
 }
 
 label {
@@ -229,6 +258,10 @@ button {
   padding: 20px;
 }
 
+.preview-container::-webkit-scrollbar {
+  display: none;
+}
+
 .preview-section.active {
   display: flex;
   justify-content: center;
@@ -329,6 +362,13 @@ button {
 }
 
 .recipient-address {
+  margin-bottom: 30px;
+  white-space: pre-line;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.greeting {
   margin-bottom: 30px;
   white-space: pre-line;
   line-height: 1.6;
