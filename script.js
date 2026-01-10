@@ -1,5 +1,6 @@
 import letterTemplates from "./letterdata.js";
 
+const previewPort = document.querySelector(".preview-container");
 const input = document.getElementById("letterhead");
 const inputLabel = document.querySelector(`label[for='${input.id}']`);
 const preview = document.getElementById("preview");
@@ -8,7 +9,9 @@ const page = document.getElementById("letterContent");
 const letterhead = document.getElementById("letterhead");
 const letterType = document.getElementById("letterType");
 const previewBtn = document.querySelector(".preview-btn");
-const closePreviewBtn = document.querySelector(".close-preview");
+const closePreviewBtn = document.querySelector(".close-btn");
+
+// Adding function to selected elements
 
 input.addEventListener("change", letterheadUpload);
 
@@ -22,7 +25,17 @@ previewBtn.addEventListener("click", togglePreview);
 
 closePreviewBtn.addEventListener("click", togglePreview);
 
-//
+////Funtionalty
+const resizeObserver = new ResizeObserver((entries) => {
+  const newWidth = entries[0].contentRect.width;
+  const scale = newWidth / 800;
+  const height = page.clientHeight * scale + 51;
+  page.style.transform = `scale(${scale})`;
+  previewPort.style.height = `${height}px`;
+});
+
+resizeObserver.observe(previewPort);
+
 function letterheadUpload() {
   const file = this.files[0];
   // console.log(file.name, inputLabel.textContent);
