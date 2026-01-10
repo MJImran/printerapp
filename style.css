@@ -401,10 +401,10 @@ button {
 @media (max-width: 27.5em) {
   .btn {
     padding: 2px 10px;
-    font-size: 12px;
+    font-size: 14px;
     /* font-weight: 500; */
   }
   .preview-top h3 {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
