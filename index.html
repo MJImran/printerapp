@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="./style.css" />
 
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
     <script src="./script.js" type="module" defer></script>
@@ -20,21 +22,8 @@
       <div class="input-section">
         <h2>Letter Details</h2>
 
-        <!-- <div class="letterhead-upload">
-          <label for="letterheadUpload">
-            add letter head
-             <div class="upload-button">Upload Letterhead</div>
-            <div class="letterhead-status" id="uploadStatus">No letterhea</div>
-          </label>
-          
-          <img
-            id="letterheadThumb"
-            class="letterhead-preview-thumb"
-            style="display: none"
-          /> 
-        </div> -->
         <div class="img-upload">
-          <label for="letterhead">
+          <label>
             Upload letter head
             <input type="file" id="letterhead" accept="image/*" />
           </label>

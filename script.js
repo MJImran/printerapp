@@ -10,10 +10,14 @@ const letterhead = document.getElementById("letterhead");
 const letterType = document.getElementById("letterType");
 const previewBtn = document.querySelector(".preview-btn");
 const closePreviewBtn = document.querySelector(".close-btn");
+const clearBtn = document.querySelector(".clear-btn");
 
 // Adding function to selected elements
 
 input.addEventListener("change", letterheadUpload);
+// inputLabel.addEventListener("click", () => {
+//   input.click();
+// });
 
 letterhead.addEventListener("change", letterheadUpload);
 
@@ -24,6 +28,8 @@ letterType.addEventListener("change", letterTypeChange);
 previewBtn.addEventListener("click", togglePreview);
 
 closePreviewBtn.addEventListener("click", togglePreview);
+
+clearBtn.addEventListener("click", clearPage);
 
 ////Funtionalty
 const resizeObserver = new ResizeObserver((entries) => {
@@ -38,8 +44,8 @@ resizeObserver.observe(previewPort);
 
 function letterheadUpload() {
   const file = this.files[0];
-  // console.log(file.name, inputLabel.textContent);
   if (file) {
+    input.clck();
     const title = file.name;
     inputLabel.textContent = title;
     const imageUrl = URL.createObjectURL(file);
@@ -53,7 +59,6 @@ function letterTypeChange() {
 
   if (letterType === "manual") {
     templateInfo.classList.remove("active");
-    // Don't auto-fill anything
   } else {
     const template = letterTemplates[letterType];
     document.getElementById("heading").value = template.heading;
@@ -79,7 +84,7 @@ function printPDF() {
     pdf.addImage(base64image, "PNG", 0, 0, 445, 620);
     console.log("about to save");
     pdf.save(`${heading + new Date()}`);
-    window.location.reload();
+    // window.location.reload();
   });
 }
 
@@ -98,7 +103,7 @@ function updatePreview() {
     const options = { year: "numeric", month: "long", day: "numeric" };
     document.getElementById("preview-date").textContent = d.toLocaleDateString(
       "en-US",
-      options
+      options,
     );
   } else {
     document.getElementById("preview-date").textContent = "";
@@ -123,15 +128,13 @@ function togglePreview() {
   }
 }
 
-// input.addEventListener("change", function (e) {
-//   const file = this.files[0];
-//   const reader = new FileReader();
-
-//   reader.onload = function (e) {
-//     page.style.backgroundImage = `url(${e.target.result})`;
-//   };
-
-//   if (file) {
-//     reader.readAsDataURL(file);
-//   }
-// });
+function clearPage() {
+  document.getElementById("date").value =
+    document.getElementById("recipient").value =
+    document.getElementById("greeting").value =
+    document.getElementById("heading").value =
+    document.getElementById("body").value =
+    document.getElementById("signatory").value =
+    document.getElementById("title").value =
+      "";
+}
