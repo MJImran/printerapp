@@ -1,4 +1,4 @@
-import letterTemplates from "./letterData.js";
+import letterTemplates from "./letterdata.js";
 
 const previewPort = document.querySelector(".preview-container");
 // const input = document.getElementById("letterhead");
