@@ -20,7 +20,6 @@ body {
 .input-section {
   background: #fff;
   padding: 3rem;
-  /* border-radius: 15px; */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   top: 2rem;
 }
@@ -34,7 +33,6 @@ body {
   background: #e8f5e9;
   border: 2px dashed #6b8e4e;
   border-radius: 10px;
-  /* padding: 5px; */
   margin-bottom: 25px;
   text-align: center;
 }
@@ -46,9 +44,7 @@ body {
   cursor: pointer;
   color: #6b8e4e;
   font-weight: 600;
-  /* margin-bottom: 8px; */
   font-size: 13px;
-  /* background-color: #000; */
 }
 
 .img-upload input[type="file"] {
@@ -70,11 +66,6 @@ body {
   background: #5a7740;
 }
 
-/* .letterhead-status {
-  margin-top: 8px;
-  font-size: 12px;
-  color: #666;
-} */
 .letter-type-selector {
   background: #fff3e0;
   border: 2px solid #ff9800;
@@ -388,7 +379,6 @@ button {
   .btn {
     padding: 2px 10px;
     font-size: 14px;
-    /* font-weight: 500; */
   }
   .preview-top h3 {
     font-size: 14px;
